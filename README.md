@@ -1,6 +1,6 @@
 # Public Transit MCP Server
 
-An MCP (Model Context Protocol) server that provides real-time public transportation information using the OneBusAway API for the Puget Sound region.
+An MCP (Model Context Protocol) server that provides real-time public transportation information using the [OneBusAway SDK](https://www.npmjs.com/package/onebusaway-sdk) for the Puget Sound region.
 
 ## Features
 

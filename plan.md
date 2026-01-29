@@ -4,7 +4,7 @@
 Create an MCP (Model Context Protocol) server that provides real-time public transportation information using the OneBusAway REST API for the Puget Sound region.
 
 ## Proposed Approach
-Build a TypeScript/Node.js MCP server using the official MCP SDK that exposes core real-time transit features as MCP tools. The API key will be configured via environment variable to keep it out of source control.
+Build a TypeScript/Node.js MCP server using the official MCP SDK and [OneBusAway SDK](https://www.npmjs.com/package/onebusaway-sdk) that exposes core real-time transit features as MCP tools. The API key will be configured via environment variable to keep it out of source control.
 
 ## Configuration
 - **Language**: TypeScript/Node.js
@@ -42,11 +42,11 @@ Build a TypeScript/Node.js MCP server using the official MCP SDK that exposes co
 - [ ] Create README with setup instructions
 
 ### Phase 2: Core Infrastructure
-- [ ] Create OneBusAway API client class
-- [ ] Implement API key configuration from environment variable
-- [ ] Add base URL configuration for Puget Sound region
-- [ ] Create TypeScript types for API responses
-- [ ] Implement error handling for API calls
+- [x] Install OneBusAway SDK (`onebusaway-sdk`)
+- [x] Create client wrapper with API key from environment variable
+- [x] Configure base URL for Puget Sound region
+- [x] TypeScript types provided by SDK
+- [x] Error handling provided by SDK
 
 ### Phase 3: MCP Server Implementation
 - [ ] Set up MCP server boilerplate
@@ -81,14 +81,12 @@ Build a TypeScript/Node.js MCP server using the official MCP SDK that exposes co
 public-transit-mcp/
 ├── src/
 │   ├── index.ts          # MCP server entry point
-│   ├── client.ts         # OneBusAway API client
-│   ├── tools/            # MCP tool implementations
-│   │   ├── nearby-stops.ts
-│   │   ├── arrivals-departures.ts
-│   │   ├── stop-info.ts
-│   │   └── route-info.ts
-│   └── types/            # TypeScript type definitions
-│       └── onebusaway.ts
+│   ├── client.ts         # OneBusAway SDK wrapper
+│   └── tools/            # MCP tool implementations
+│       ├── nearby-stops.ts
+│       ├── arrivals-departures.ts
+│       ├── stop-info.ts
+│       └── route-info.ts
 ├── package.json
 ├── tsconfig.json
 ├── .gitignore
