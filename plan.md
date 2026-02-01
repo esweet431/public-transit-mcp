@@ -39,6 +39,7 @@ Build a TypeScript/Node.js MCP server using the official MCP SDK and [OneBusAway
 - [x] Set up TypeScript configuration
 - [x] Create project structure (src/, types/, etc.)
 - [x] Add .gitignore (node_modules, .env, dist/, etc.)
+- [x] Add npm scripts (build, start, dev)
 - [x] Create README with setup instructions
 
 ### Phase 2: Core Infrastructure
@@ -56,7 +57,6 @@ Build a TypeScript/Node.js MCP server using the official MCP SDK and [OneBusAway
 - [x] Implement `get_route_info` tool
 
 ### Phase 4: Testing & Documentation
-- [ ] Add npm scripts (build, start, dev)
 - [ ] Test MCP server with Claude Desktop or MCP Inspector
 - [ ] Document environment variable setup
 - [ ] Add example usage in README
