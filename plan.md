@@ -34,12 +34,12 @@ Build a TypeScript/Node.js MCP server using the official MCP SDK and [OneBusAway
 ## Workplan
 
 ### Phase 1: Project Setup
-- [ ] Initialize Node.js project with TypeScript
-- [ ] Install dependencies (MCP SDK, TypeScript, etc.)
-- [ ] Set up TypeScript configuration
-- [ ] Create project structure (src/, types/, etc.)
-- [ ] Add .gitignore (node_modules, .env, dist/, etc.)
-- [ ] Create README with setup instructions
+- [x] Initialize Node.js project with TypeScript
+- [x] Install dependencies (MCP SDK, TypeScript, etc.)
+- [x] Set up TypeScript configuration
+- [x] Create project structure (src/, types/, etc.)
+- [x] Add .gitignore (node_modules, .env, dist/, etc.)
+- [x] Create README with setup instructions
 
 ### Phase 2: Core Infrastructure
 - [x] Install OneBusAway SDK (`onebusaway-sdk`)
@@ -49,11 +49,11 @@ Build a TypeScript/Node.js MCP server using the official MCP SDK and [OneBusAway
 - [x] Error handling provided by SDK
 
 ### Phase 3: MCP Server Implementation
-- [ ] Set up MCP server boilerplate
-- [ ] Implement `get_nearby_stops` tool
-- [ ] Implement `get_arrivals_departures` tool
-- [ ] Implement `get_stop_info` tool
-- [ ] Implement `get_route_info` tool
+- [x] Set up MCP server boilerplate
+- [x] Implement `get_nearby_stops` tool
+- [x] Implement `get_arrivals_departures` tool
+- [x] Implement `get_stop_info` tool
+- [x] Implement `get_route_info` tool
 
 ### Phase 4: Testing & Documentation
 - [ ] Add npm scripts (build, start, dev)
