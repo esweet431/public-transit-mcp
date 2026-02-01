@@ -1,7 +1,5 @@
 import OnebusawaySDK from "onebusaway-sdk";
 
-const PUGET_SOUND_BASE_URL = "https://api.pugetsound.onebusaway.org/api/where";
-
 export function createClient(): OnebusawaySDK {
   // get API key from environment variable
   const apiKey = process.env.ONEBUSAWAY_API_KEY;
@@ -15,11 +13,8 @@ export function createClient(): OnebusawaySDK {
   }
 
   // create and return OneBusAway SDK client
-  return new OnebusawaySDK({
-    apiKey,
-    // default to Puget Sound if no base URL is provided
-    baseURL: process.env.ONEBUSAWAY_BASE_URL ?? PUGET_SOUND_BASE_URL,
-  });
+  // SDK defaults to Puget Sound region (api.pugetsound.onebusaway.org)
+  return new OnebusawaySDK({ apiKey });
 }
 
 export { OnebusawaySDK };
