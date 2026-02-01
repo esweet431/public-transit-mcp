@@ -60,32 +60,23 @@ An MCP (Model Context Protocol) server that provides real-time public transporta
 
 ## Usage with GitHub Copilot CLI
 
-1. Add the MCP server configuration using the `/mcp` command:
-   ```
-   /mcp add public-transit
-   ```
+Add the MCP server configuration using the `/mcp add` command:
 
-2. When prompted, configure the server with:
-   - **Command**: `node`
-   - **Args**: `["C:/path/to/public-transit-mcp/dist/index.js"]`
-   - **Env**: `{"ONEBUSAWAY_API_KEY": "your-api-key-here"}`
+```
+/mcp add public-transit --command node --args C:/path/to/public-transit-mcp/dist/index.js --env ONEBUSAWAY_API_KEY=your-api-key-here
+```
 
-   Or manually edit your MCP configuration file (`~/.copilot/mcp.json`):
-   ```json
-   {
-     "mcpServers": {
-       "public-transit": {
-         "command": "node",
-         "args": ["C:/path/to/public-transit-mcp/dist/index.js"],
-         "env": {
-           "ONEBUSAWAY_API_KEY": "your-api-key-here"
-         }
-       }
-     }
-   }
-   ```
+Or use `/mcp add public-transit` and follow the interactive prompts to configure:
+- **Command**: `node`
+- **Args**: `C:/path/to/public-transit-mcp/dist/index.js`
+- **Env**: `ONEBUSAWAY_API_KEY=your-api-key-here`
 
-3. Restart Copilot CLI or run `/mcp enable public-transit` to activate the server.
+To manage the server:
+- `/mcp show` - View current MCP configuration
+- `/mcp edit public-transit` - Edit the server configuration
+- `/mcp disable public-transit` - Temporarily disable the server
+- `/mcp enable public-transit` - Re-enable the server
+- `/mcp delete public-transit` - Remove the server
 
 ## Development
 
