@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "MCP server for real-time public transit information using OneBusAway API",
   "main": "dist/index.js",
+  "bin": {
+    "public-transit-mcp": "dist/index.js"
+  },
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "start": "node --env-file=.env dist/index.js",
     "dev": "tsx watch --env-file=.env src/index.ts"
   },
@@ -13,8 +20,20 @@
     "type": "git",
     "url": "git+https://github.com/esweet431/public-transit-mcp.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "transit",
+    "onebusaway",
+    "public-transit",
+    "seattle",
+    "puget-sound"
+  ],
+  "author": {
+    "name": "Erika Sweet",
+    "email": "esweet431@gmail.com",
+    "url": "https://github.com/esweet431"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/esweet431/public-transit-mcp/issues"

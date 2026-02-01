@@ -14,7 +14,33 @@ An MCP (Model Context Protocol) server that provides real-time public transporta
 - Node.js 18+
 - OneBusAway API key ([request one here](https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd))
 
-## Setup
+## Quick Start (npx)
+
+The easiest way to use this MCP server is via npx - no installation required:
+
+```bash
+ONEBUSAWAY_API_KEY=your-api-key npx public-transit-mcp
+```
+
+Or configure it in your MCP client:
+
+```json
+{
+  "mcpServers": {
+    "public-transit": {
+      "command": "npx",
+      "args": ["public-transit-mcp"],
+      "env": {
+        "ONEBUSAWAY_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+## Installation from Source
+
+If you prefer to install from source:
 
 1. Clone the repository:
    ```bash
@@ -66,8 +92,8 @@ An MCP (Model Context Protocol) server that provides real-time public transporta
    ```
 
 2. When prompted, configure the server with:
-   - **Command**: `node`
-   - **Args**: `["C:/path/to/public-transit-mcp/dist/index.js"]`
+   - **Command**: `npx`
+   - **Args**: `["public-transit-mcp"]`
    - **Env**: `{"ONEBUSAWAY_API_KEY": "your-api-key-here"}`
 
    Or manually edit your MCP configuration file (`~/.copilot/mcp.json`):
@@ -75,8 +101,8 @@ An MCP (Model Context Protocol) server that provides real-time public transporta
    {
      "mcpServers": {
        "public-transit": {
-         "command": "node",
-         "args": ["C:/path/to/public-transit-mcp/dist/index.js"],
+         "command": "npx",
+         "args": ["public-transit-mcp"],
          "env": {
            "ONEBUSAWAY_API_KEY": "your-api-key-here"
          }
@@ -86,6 +112,29 @@ An MCP (Model Context Protocol) server that provides real-time public transporta
    ```
 
 3. Restart Copilot CLI or run `/mcp enable public-transit` to activate the server.
+
+## Usage with VS Code
+
+1. Open VS Code Settings (JSON) - `Ctrl+Shift+P` → "Preferences: Open User Settings (JSON)"
+
+2. Add the MCP server configuration:
+   ```json
+   {
+     "mcp": {
+       "servers": {
+         "public-transit": {
+           "command": "npx",
+           "args": ["public-transit-mcp"],
+           "env": {
+             "ONEBUSAWAY_API_KEY": "your-api-key-here"
+           }
+         }
+       }
+     }
+   }
+   ```
+
+3. Reload VS Code and use Copilot Chat to ask transit questions.
 
 ## Development
 
