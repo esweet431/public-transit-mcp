@@ -4,6 +4,7 @@ import { createClient } from "./client.js";
 import { registerNearbyStops } from "./tools/nearby-stops.js";
 import { registerArrivalsDepartures } from "./tools/arrivals-departures.js";
 import { registerStopInfo } from "./tools/stop-info.js";
+import { registerRouteInfo } from "./tools/route-info.js";
 
 // create OneBusAway client
 const obaClient = createClient();
@@ -18,8 +19,7 @@ const server = new McpServer({
 registerNearbyStops(server, obaClient);
 registerArrivalsDepartures(server, obaClient);
 registerStopInfo(server, obaClient);
-// TODO:
-// - get_route_info
+registerRouteInfo(server, obaClient);
 
 // start the server with stdio transport
 async function main() {
