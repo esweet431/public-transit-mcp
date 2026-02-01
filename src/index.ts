@@ -1,23 +1,25 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { createClient } from "./client.js";
+import { registerNearbyStops } from "./tools/nearby-stops.js";
 
-// Create OneBusAway client (validates API key on startup)
+// create OneBusAway client
 const obaClient = createClient();
 
-// Create MCP server
+// create MCP server
 const server = new McpServer({
   name: "public-transit-mcp",
   version: "1.0.0",
 });
 
-// TODO: Register tools
-// - get_nearby_stops
+// Register tools
+registerNearbyStops(server, obaClient);
+// TODO:
 // - get_arrivals_departures
 // - get_stop_info
 // - get_route_info
 
-// Start the server with stdio transport
+// start the server with stdio transport
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
