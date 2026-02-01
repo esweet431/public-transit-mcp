@@ -3,6 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { createClient } from "./client.js";
 import { registerNearbyStops } from "./tools/nearby-stops.js";
 import { registerArrivalsDepartures } from "./tools/arrivals-departures.js";
+import { registerStopInfo } from "./tools/stop-info.js";
 
 // create OneBusAway client
 const obaClient = createClient();
@@ -16,8 +17,8 @@ const server = new McpServer({
 // Register tools
 registerNearbyStops(server, obaClient);
 registerArrivalsDepartures(server, obaClient);
+registerStopInfo(server, obaClient);
 // TODO:
-// - get_stop_info
 // - get_route_info
 
 // start the server with stdio transport
