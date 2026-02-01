@@ -57,8 +57,8 @@ Build a TypeScript/Node.js MCP server using the official MCP SDK and [OneBusAway
 - [x] Implement `get_route_info` tool
 
 ### Phase 4: Testing & Documentation
-- [ ] Test MCP server with Claude Desktop or MCP Inspector
-- [ ] Document environment variable setup
+- [x] Test MCP server with stdio
+- [x] Document environment variable setup
 - [ ] Add example usage in README
 
 ---

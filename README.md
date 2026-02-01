@@ -27,7 +27,16 @@ An MCP (Model Context Protocol) server that provides real-time public transporta
    npm install
    ```
 
-3. Set your OneBusAway API key as an environment variable:
+3. Set your OneBusAway API key:
+
+   **Option A: Using a `.env` file (recommended)**
+   
+   Create a `.env` file in the project root:
+   ```
+   ONEBUSAWAY_API_KEY=your-api-key-here
+   ```
+
+   **Option B: Using environment variables**
    ```bash
    # Windows (PowerShell)
    $env:ONEBUSAWAY_API_KEY = "your-api-key-here"
